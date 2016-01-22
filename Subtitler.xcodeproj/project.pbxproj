@@ -10,6 +10,8 @@
 		49CC25881C52767200053944 /* Subtitler.h in Headers */ = {isa = PBXBuildFile; fileRef = 49CC25871C52767200053944 /* Subtitler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49CC258F1C52767200053944 /* Subtitler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CC25841C52767200053944 /* Subtitler.framework */; };
 		49CC25941C52767200053944 /* SubtitlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC25931C52767200053944 /* SubtitlerTests.swift */; };
+		49CC259F1C5276BB00053944 /* FileHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC259E1C5276BB00053944 /* FileHash.swift */; };
+		A46A680C6B0A19CC19089E9A /* Pods_Subtitler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2B05B996541052A0EF882E /* Pods_Subtitler.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +25,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17008E65A4F935F1D76DADD4 /* Pods-Subtitler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtitler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Subtitler/Pods-Subtitler.release.xcconfig"; sourceTree = "<group>"; };
+		3F0849D2F090DAB78296A1FD /* Pods-Subtitler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Subtitler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Subtitler/Pods-Subtitler.debug.xcconfig"; sourceTree = "<group>"; };
 		49CC25841C52767200053944 /* Subtitler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Subtitler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CC25871C52767200053944 /* Subtitler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Subtitler.h; sourceTree = "<group>"; };
 		49CC25891C52767200053944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49CC258E1C52767200053944 /* SubtitlerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubtitlerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CC25931C52767200053944 /* SubtitlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitlerTests.swift; sourceTree = "<group>"; };
 		49CC25951C52767200053944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49CC259E1C5276BB00053944 /* FileHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHash.swift; sourceTree = "<group>"; };
+		8C2B05B996541052A0EF882E /* Pods_Subtitler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Subtitler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A46A680C6B0A19CC19089E9A /* Pods_Subtitler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,12 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FD55E7AA7629B047C380941 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8C2B05B996541052A0EF882E /* Pods_Subtitler.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49CC257A1C52767200053944 = {
 			isa = PBXGroup;
 			children = (
 				49CC25861C52767200053944 /* Subtitler */,
 				49CC25921C52767200053944 /* SubtitlerTests */,
 				49CC25851C52767200053944 /* Products */,
+				CBD91C1D0793230317A5BC73 /* Pods */,
+				1FD55E7AA7629B047C380941 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +88,7 @@
 		49CC25861C52767200053944 /* Subtitler */ = {
 			isa = PBXGroup;
 			children = (
+				49CC259E1C5276BB00053944 /* FileHash.swift */,
 				49CC25871C52767200053944 /* Subtitler.h */,
 				49CC25891C52767200053944 /* Info.plist */,
 			);
@@ -84,6 +102,15 @@
 				49CC25951C52767200053944 /* Info.plist */,
 			);
 			path = SubtitlerTests;
+			sourceTree = "<group>";
+		};
+		CBD91C1D0793230317A5BC73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F0849D2F090DAB78296A1FD /* Pods-Subtitler.debug.xcconfig */,
+				17008E65A4F935F1D76DADD4 /* Pods-Subtitler.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,10 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49CC25981C52767200053944 /* Build configuration list for PBXNativeTarget "Subtitler" */;
 			buildPhases = (
+				C8418E72623893E9DF25340E /* Check Pods Manifest.lock */,
 				49CC257F1C52767200053944 /* Sources */,
 				49CC25801C52767200053944 /* Frameworks */,
 				49CC25811C52767200053944 /* Headers */,
 				49CC25821C52767200053944 /* Resources */,
+				DFC5F6FDC3AA8377CCE8440B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -189,11 +218,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C8418E72623893E9DF25340E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DFC5F6FDC3AA8377CCE8440B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Subtitler/Pods-Subtitler-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		49CC257F1C52767200053944 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CC259F1C5276BB00053944 /* FileHash.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +367,7 @@
 		};
 		49CC25991C52767200053944 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F0849D2F090DAB78296A1FD /* Pods-Subtitler.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -322,6 +386,7 @@
 		};
 		49CC259A1C52767200053944 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17008E65A4F935F1D76DADD4 /* Pods-Subtitler.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -379,6 +444,7 @@
 				49CC259A1C52767200053944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49CC259B1C52767200053944 /* Build configuration list for PBXNativeTarget "SubtitlerTests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +453,7 @@
 				49CC259D1C52767200053944 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

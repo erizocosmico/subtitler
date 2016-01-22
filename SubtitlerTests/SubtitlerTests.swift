@@ -6,31 +6,45 @@
 //  Copyright © 2016 mvader. All rights reserved.
 //
 
+import Foundation
 import XCTest
 @testable import Subtitler
 
 class SubtitlerTests: XCTestCase {
     
+    func file(name: String) -> String {
+        return NSBundle(forClass: SubtitlerTests.self).resourcePath! + name
+    }
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        let file = self.file("f1.txt")
+        var txt = ""
+        for _ in 1...105536 {
+            txt += "a"
+        }
+        do {
+            try txt.writeToFile(file, atomically: true, encoding: NSUTF8StringEncoding)
+        } catch {}
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+        
+        let file = self.file("f1.txt")
+        let fileManager = NSFileManager.defaultManager()
+    
+        do {
+            try fileManager.removeItemAtPath(file)
+        } catch {}
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
+    func testHashFile() {
+        let file = self.file("f1.txt")
+        let hash = Subtitler.fileHash(file)!
+        XCTAssertEqual(hash.size, 105536)
+        XCTAssertEqual(hash.hash, "585858585859dc40")
     }
     
 }
