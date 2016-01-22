@@ -1,11 +1,3 @@
-//
-//  Subtitler.h
-//  Subtitler
-//
-//  Created by Miguel on 22/01/16.
-//  Copyright © 2016 mvader. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
 
 //! Project version number for Subtitler.

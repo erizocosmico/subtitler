@@ -1,11 +1,3 @@
-//
-//  SubtitlerTests.swift
-//  SubtitlerTests
-//
-//  Created by Miguel on 22/01/16.
-//  Copyright © 2016 mvader. All rights reserved.
-//
-
 import Foundation
 import XCTest
 @testable import Subtitler
@@ -18,26 +10,19 @@ class SubtitlerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
         let file = self.file("f1.txt")
         var txt = ""
         for _ in 1...105536 {
             txt += "a"
         }
-        do {
-            try txt.writeToFile(file, atomically: true, encoding: NSUTF8StringEncoding)
-        } catch {}
+        try! txt.writeToFile(file, atomically: true, encoding: NSUTF8StringEncoding)
     }
     
     override func tearDown() {
         super.tearDown()
-        
         let file = self.file("f1.txt")
         let fileManager = NSFileManager.defaultManager()
-    
-        do {
-            try fileManager.removeItemAtPath(file)
-        } catch {}
+        try! fileManager.removeItemAtPath(file)
     }
     
     func testHashFile() {

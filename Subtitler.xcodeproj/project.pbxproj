@@ -11,6 +11,8 @@
 		49CC258F1C52767200053944 /* Subtitler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CC25841C52767200053944 /* Subtitler.framework */; };
 		49CC25941C52767200053944 /* SubtitlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC25931C52767200053944 /* SubtitlerTests.swift */; };
 		49CC259F1C5276BB00053944 /* FileHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC259E1C5276BB00053944 /* FileHash.swift */; };
+		49CC25A11C5283AA00053944 /* Subtitler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC25A01C5283AA00053944 /* Subtitler.swift */; };
+		49CC25A31C52858D00053944 /* OpenSubtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC25A21C52858D00053944 /* OpenSubtitles.swift */; };
 		A46A680C6B0A19CC19089E9A /* Pods_Subtitler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2B05B996541052A0EF882E /* Pods_Subtitler.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		49CC25931C52767200053944 /* SubtitlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitlerTests.swift; sourceTree = "<group>"; };
 		49CC25951C52767200053944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49CC259E1C5276BB00053944 /* FileHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHash.swift; sourceTree = "<group>"; };
+		49CC25A01C5283AA00053944 /* Subtitler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subtitler.swift; sourceTree = "<group>"; };
+		49CC25A21C52858D00053944 /* OpenSubtitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSubtitles.swift; sourceTree = "<group>"; };
 		8C2B05B996541052A0EF882E /* Pods_Subtitler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Subtitler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -91,6 +95,8 @@
 				49CC259E1C5276BB00053944 /* FileHash.swift */,
 				49CC25871C52767200053944 /* Subtitler.h */,
 				49CC25891C52767200053944 /* Info.plist */,
+				49CC25A01C5283AA00053944 /* Subtitler.swift */,
+				49CC25A21C52858D00053944 /* OpenSubtitles.swift */,
 			);
 			path = Subtitler;
 			sourceTree = "<group>";
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CC25A11C5283AA00053944 /* Subtitler.swift in Sources */,
 				49CC259F1C5276BB00053944 /* FileHash.swift in Sources */,
+				49CC25A31C52858D00053944 /* OpenSubtitles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
