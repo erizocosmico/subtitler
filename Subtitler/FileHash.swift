@@ -42,6 +42,8 @@ func fileHash(path: String) -> FileHash? {
         var hash = size
         hash = applyChunk(hash, chunk: start)
         hash = applyChunk(hash, chunk: end)
+        
+        f.closeFile()
         return FileHash(hash: hexHash(hash), size: size)
     }
     return nil
