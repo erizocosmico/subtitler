@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 @testable import Subtitler
 
-class SubtitlerTests: XCTestCase {
+class FileHashTests: XCTestCase {
     
     func file(name: String) -> String {
         return NSBundle(forClass: SubtitlerTests.self).resourcePath! + name
