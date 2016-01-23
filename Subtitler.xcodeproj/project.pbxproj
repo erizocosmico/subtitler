@@ -14,6 +14,8 @@
 		49CC25A11C5283AA00053944 /* Subtitler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC25A01C5283AA00053944 /* Subtitler.swift */; };
 		49CC25A31C52858D00053944 /* OpenSubtitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC25A21C52858D00053944 /* OpenSubtitles.swift */; };
 		4DC939B21C52E0AD000C3750 /* OpenSubtitlesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC939B11C52E0AD000C3750 /* OpenSubtitlesTest.swift */; };
+		4DC939B41C53DCE0000C3750 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC939B31C53DCE0000C3750 /* libz.tbd */; };
+		4DC939B61C53ED30000C3750 /* SubtitlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC939B51C53ED30000C3750 /* SubtitlerTests.swift */; };
 		A46A680C6B0A19CC19089E9A /* Pods_Subtitler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C2B05B996541052A0EF882E /* Pods_Subtitler.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +42,8 @@
 		49CC25A01C5283AA00053944 /* Subtitler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subtitler.swift; sourceTree = "<group>"; };
 		49CC25A21C52858D00053944 /* OpenSubtitles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSubtitles.swift; sourceTree = "<group>"; };
 		4DC939B11C52E0AD000C3750 /* OpenSubtitlesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSubtitlesTest.swift; sourceTree = "<group>"; };
+		4DC939B31C53DCE0000C3750 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4DC939B51C53ED30000C3750 /* SubtitlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitlerTests.swift; sourceTree = "<group>"; };
 		8C2B05B996541052A0EF882E /* Pods_Subtitler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Subtitler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -48,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DC939B41C53DCE0000C3750 /* libz.tbd in Frameworks */,
 				A46A680C6B0A19CC19089E9A /* Pods_Subtitler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +71,7 @@
 		1FD55E7AA7629B047C380941 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4DC939B31C53DCE0000C3750 /* libz.tbd */,
 				8C2B05B996541052A0EF882E /* Pods_Subtitler.framework */,
 			);
 			name = Frameworks;
@@ -109,6 +115,7 @@
 				49CC25931C52767200053944 /* FileHashTest.swift */,
 				49CC25951C52767200053944 /* Info.plist */,
 				4DC939B11C52E0AD000C3750 /* OpenSubtitlesTest.swift */,
+				4DC939B51C53ED30000C3750 /* SubtitlerTests.swift */,
 			);
 			path = SubtitlerTests;
 			sourceTree = "<group>";
@@ -276,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CC25941C52767200053944 /* FileHashTest.swift in Sources */,
+				4DC939B61C53ED30000C3750 /* SubtitlerTests.swift in Sources */,
 				4DC939B21C52E0AD000C3750 /* OpenSubtitlesTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,7 +5,7 @@ import XCTest
 class FileHashTests: XCTestCase {
     
     func file(name: String) -> String {
-        return NSBundle(forClass: SubtitlerTests.self).resourcePath! + name
+        return NSBundle(forClass: FileHashTests.self).resourcePath! + name
     }
     
     override func setUp() {
@@ -27,7 +27,7 @@ class FileHashTests: XCTestCase {
     
     func testHashFile() {
         let file = self.file("f1.txt")
-        let hash = Subtitler.fileHash(file)!
+        let hash = fileHash(file)!
         XCTAssertEqual(hash.size, 105536)
         XCTAssertEqual(hash.hash, "585858585859dc40")
     }
