@@ -1,6 +1,6 @@
 import Foundation
 import Alamofire
-import SSZipArchive
+import GZIP
 
 public enum SubtitlerError: ErrorType {
     case UnableToWrite, UnknownError, NotReady, UnableToGetHash, UnzipError
@@ -8,8 +8,16 @@ public enum SubtitlerError: ErrorType {
     case DownloadError(_: NSError)
 }
 
-private func unzip(file: String, to: String) -> Bool {
-    return SSZipArchive.unzipFileAtPath(file, toDestination: to)
+private func unzip(data: NSData, to: String) -> Bool {
+    if !data.isGzippedData() {
+        return false
+    }
+
+    if let content = data.gunzippedData() {
+        return content.writeToFile(to, atomically: true)
+    } else {
+        return false
+    }
 }
 
 public func subtitlesPath(path: String) -> String {
@@ -25,7 +33,7 @@ public class Subtitler: NSObject {
     var client: OpenSubtitlesClient
     var loggedIn: Bool = false
 
-    init(lang: String, _ userAgent: String) {
+    init(lang: String, userAgent: String) {
         self.lang = lang
         self.userAgent = userAgent
         self.client = OpenSubtitlesClient(userAgent: userAgent, lang: lang)
@@ -44,15 +52,11 @@ public class Subtitler: NSObject {
     }
 
     private func downloadSubtitlesFile(url: String, _ path: String, _ onComplete: Result<String, SubtitlerError> -> Void) {
-        var tmpUrl: NSURL?
-        Alamofire.download(.GET, url, destination: { (tempURL, _) in
-            tmpUrl = tempURL
-            return tempURL
-        }).response { (_, _, _, error) in
+        Alamofire.request(.GET, url).response { (_, _, data, error) in
             if error != nil {
                 onComplete(Result.Failure(SubtitlerError.DownloadError(error!)))
-            } else if tmpUrl != nil {
-                if unzip(tmpUrl!.absoluteString, to: path) {
+            } else if data != nil {
+                if unzip(data!, to: path) {
                     onComplete(Result.Success(path))
                 } else {
                     onComplete(Result.Failure(SubtitlerError.UnzipError))

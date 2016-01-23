@@ -4,16 +4,16 @@ PODS:
   - AlamofireXMLRPC (1.0.0):
     - AEXML
     - Alamofire
-  - SSZipArchive (1.0.1)
+  - GZIP (1.1.1)
 
 DEPENDENCIES:
   - AlamofireXMLRPC (= 1.0.0)
-  - SSZipArchive (= 1.0.1)
+  - GZIP (= 1.1.1)
 
 SPEC CHECKSUMS:
   AEXML: d6bb5b994521fcf3667ee8ccc1ed533f31b19218
   Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
   AlamofireXMLRPC: e07967849f7a43cd60eee336c29afcbe7ca277a9
-  SSZipArchive: 5f30a0af2cb3d48c0ff83b1e18029f7041ac3c38
+  GZIP: f8beb59597f651e6970a45b816508a9c6d700b77
 
 COCOAPODS: 0.39.0
