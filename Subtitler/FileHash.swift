@@ -2,7 +2,7 @@ import Foundation
 
 private let chunkSize: Int = 65536
 
-struct FileHash {
+public struct FileHash {
     var hash: String
     var size: UInt64
 }
@@ -30,7 +30,7 @@ private func fileSize(f: NSFileHandle) -> UInt64 {
     return f.offsetInFile
 }
 
-func fileHash(path: String) -> FileHash? {
+public func fileHash(path: String) -> FileHash? {
     if let f = NSFileHandle(forReadingAtPath: path) {
         let size = fileSize(f)
         if size < UInt64(chunkSize) {

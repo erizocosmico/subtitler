@@ -67,7 +67,7 @@ public class Subtitler: NSObject {
         }
     }
 
-    private func getSubtitles(path: String, _ onComplete: Result<String, SubtitlerError> -> Void) {
+    private func searchSubtitles(path: String, _ onComplete: Result<String, SubtitlerError> -> Void) {
         if let fh = fileHash(path) {
             self.client.searchSubtitle(fh.hash, fh.size) { result in
                 switch result {
@@ -89,11 +89,11 @@ public class Subtitler: NSObject {
                 if let error = err {
                     onComplete(Result.Failure(SubtitlerError.ClientError(error)))
                 } else {
-                    self.getSubtitles(path, onComplete)
+                    self.searchSubtitles(path, onComplete)
                 }
             }
         } else {
-            self.getSubtitles(path, onComplete)
+            self.searchSubtitles(path, onComplete)
         }
     }
 }
