@@ -33,7 +33,7 @@ public class Subtitler: NSObject {
     var client: OpenSubtitlesClient
     var loggedIn: Bool = false
 
-    init(lang: String, userAgent: String) {
+    public init(lang: String, userAgent: String) {
         self.lang = lang
         self.userAgent = userAgent
         self.client = OpenSubtitlesClient(userAgent: userAgent, lang: lang)
