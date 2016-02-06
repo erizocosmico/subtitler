@@ -34,7 +34,7 @@ class OpenSubtitlesTest: XCTestCase {
             case .Failure(_):
                 XCTAssertTrue(false)
             case .Success(let token):
-                client.searchSubtitle(testFileHash, testFileSize, onComplete: { result in
+                client.searchSubtitle(testFileHash, testFileSize, "es", onComplete: { result in
                     switch result {
                     case .Failure(_):
                         XCTAssertTrue(false)

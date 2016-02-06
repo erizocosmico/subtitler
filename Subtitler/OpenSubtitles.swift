@@ -51,7 +51,7 @@ class OpenSubtitlesClient: NSObject {
         })
     }
     
-    func searchSubtitle(hash: String, _ size: UInt64, onComplete: Result<String, OpenSubtitlesError> -> Void) {
+    func searchSubtitle(hash: String, _ size: UInt64, _ lang: String, onComplete: Result<String, OpenSubtitlesError> -> Void) {
         if self.token == "" {
             onComplete(Result.Failure(OpenSubtitlesError.NotLoggedIn))
             return
@@ -64,7 +64,7 @@ class OpenSubtitlesClient: NSObject {
                 let status = self.status(node)
                 if status.success {
                     let data = node[0]["data"]
-                    if let link = self.findSubtitle(data) {
+                    if let link = self.findSubtitle(data, lang) {
                         onComplete(Result.Success(link))
                         return
                     }
@@ -79,10 +79,10 @@ class OpenSubtitlesClient: NSObject {
         })
     }
 
-    private func findSubtitle(subtitles: XMLRPCNode) -> String? {
+    private func findSubtitle(subtitles: XMLRPCNode, _ lang: String) -> String? {
         for i in 0..<subtitles.count! {
             let sub = subtitles[i]
-            if sub["ISO639"].string! == self.lang {
+            if sub["ISO639"].string! == lang {
                 return sub["SubDownloadLink"].string!
             }
         }
