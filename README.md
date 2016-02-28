@@ -47,7 +47,7 @@ Use this in your `Podfile`!
 use_frameworks!
 
 target 'MyApp' do
-	pod 'Subtitler', '0.1.0'
+	pod 'Subtitler', '0.2.0'
 end
 ```
 
